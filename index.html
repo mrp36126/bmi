@@ -5,32 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div class="calculator">
-        <h1>BMI Calculator</h1>
-        <div class="input-group">
-            <label for="height">Height (cm):</label>
-            <input type="number" id="height" placeholder="Enter height in cm">
+    <div class="glass-card">
+        <div class="header-row">
+            <h1>BMI Calculator</h1>
+            <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">
+                <span class="material-icons">dark_mode</span>
+            </button>
         </div>
-        <div class="input-group">
-            <label for="weight">Weight (kg):</label>
-            <input type="number" id="weight" placeholder="Enter weight in kg">
-        </div>
-        <button onclick="calculateBMI()">Calculate BMI</button>
-        <div id="result"></div>
+        <p class="subtitle">Check your body mass index</p>
         
-        <div class="chart-container" id="chartContainer" style="display:none;">
-            <h2>BMI Scale</h2>
-            <div class="bmi-scale">
-                <div class="scale-segment underweight"><span>Underweight<br>&lt; 18.5</span></div>
-                <div class="scale-segment normal"><span>Normal<br>18.5 - 24.9</span></div>
-                <div class="scale-segment overweight"><span>Overweight<br>25 - 29.9</span></div>
-                <div class="scale-segment obese"><span>Obese<br>≥ 30</span></div>
-                <div class="bmi-indicator" id="bmiIndicator"></div>
+        <div class="input-group">
+            <label for="height">
+                <span class="material-icons">height</span>
+                Height (cm)
+            </label>
+            <input type="number" id="height" placeholder="175">
+        </div>
+        
+        <div class="input-group">
+            <label for="weight">
+                <span class="material-icons">fitness_center</span>
+                Weight (kg)
+            </label>
+            <input type="number" id="weight" placeholder="70">
+        </div>
+        
+        <button class="primary-btn" onclick="calculateBMI()">
+            Calculate BMI
+            <span class="btn-icon">→</span>
+        </button>
+        
+        <div class="result-container" id="resultContainer">
+            <div id="result"></div>
+            <div class="chart-container" id="chartContainer">
+                <div class="bmi-scale">
+                    <div class="scale-segment underweight"><span>Underweight<br>&lt; 18.5</span></div>
+                    <div class="scale-segment normal"><span>Healthy<br>18.5–24.9</span></div>
+                    <div class="scale-segment overweight"><span>Overweight<br>25–29.9</span></div>
+                    <div class="scale-segment obese"><span>Obese<br>≥ 30</span></div>
+                    <div class="bmi-indicator" id="bmiIndicator"></div>
+                </div>
+            </div>
+            
+            <div class="history-section" id="historySection">
+                <h3>Your History</h3>
+                <div class="history-list" id="historyList"></div>
+                <button class="text-btn" onclick="clearHistory()">
+                    <span class="material-icons">delete</span>
+                    Clear History
+                </button>
+            </div>
+            
+            <div class="share-section">
+                <button class="share-btn" onclick="shareResult()">
+                    <span class="material-icons">share</span>
+                    Share Result
+                </button>
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
