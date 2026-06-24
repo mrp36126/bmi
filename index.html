@@ -19,6 +19,17 @@
         </div>
         <button onclick="calculateBMI()">Calculate BMI</button>
         <div id="result"></div>
+        
+        <div class="chart-container" id="chartContainer" style="display:none;">
+            <h2>BMI Scale</h2>
+            <div class="bmi-scale">
+                <div class="scale-segment underweight"><span>Underweight<br>&lt; 18.5</span></div>
+                <div class="scale-segment normal"><span>Normal<br>18.5 - 24.9</span></div>
+                <div class="scale-segment overweight"><span>Overweight<br>25 - 29.9</span></div>
+                <div class="scale-segment obese"><span>Obese<br>≥ 30</span></div>
+                <div class="bmi-indicator" id="bmiIndicator"></div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

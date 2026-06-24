@@ -21,5 +21,17 @@ function calculateBMI() {
     }
     
     document.getElementById('result').innerHTML = 
-        `Your BMI: ${bmi.toFixed(1)} (${category})`;
+        `Your BMI: <strong>${bmi.toFixed(1)}</strong> (${category})`;
+    
+    // Show and update the chart
+    const chart = document.getElementById('chartContainer');
+    chart.style.display = 'block';
+    
+    // Position indicator (scale represents BMI 15 to 40)
+    const minBMI = 15;
+    const maxBMI = 40;
+    const scaleWidth = document.querySelector('.bmi-scale').offsetWidth;
+    const position = ((Math.min(Math.max(bmi, minBMI), maxBMI) - minBMI) / (maxBMI - minBMI)) * scaleWidth;
+    
+    document.getElementById('bmiIndicator').style.left = `${position}px`;
 }
