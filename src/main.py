@@ -1,0 +1,5 @@
+{
+    "name": "read_currently_open_file",
+    "arguments": {}
+}
+
