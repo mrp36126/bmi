@@ -1,0 +1,24 @@
+{
+  "mode": "autonomous",
+  "memory": {
+    "enabled": true,
+    "strategy": "ripgrep+embeddings"
+  },
+  "workflow": [
+    "plan",
+    "search",
+    "edit",
+    "verify",
+    "git_checkpoint",
+    "report"
+  ],
+  "tools": {
+    "ripgrep": true,
+    "git": true,
+    "filesystem": true
+  },
+  "safety": {
+    "auto_run_terminal": false,
+    "auto_delete_files": false
+  }
+}
